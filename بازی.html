@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GameForge — مسابقه بازی‌سازی</title>
+<meta name="description" content="مسابقه آنلاین بازی‌سازی؛ ساخت، ارسال و رقابت.">
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:#070a12;color:#f5f7fb;font-family:Tahoma,Arial,sans-serif}
+:root{--a:#8b5cf6;--b:#22d3ee;--muted:#9ca8bc;--card:#101522;--line:#ffffff14}
+body:before{content:"";position:fixed;inset:-30%;background:radial-gradient(circle at 20% 15%,#512da833,transparent 32%),radial-gradient(circle at 85% 25%,#00bcd433,transparent 28%);z-index:-1;filter:blur(20px)}
+nav{position:sticky;top:0;z-index:20;background:#070a12d9;backdrop-filter:blur(16px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:13px 6vw}
+.logo{font-weight:1000;font-size:21px}.logo span{color:var(--b)}nav a{color:#cbd5e1;text-decoration:none;margin:0 8px;font-size:13px}
+.wrap{width:min(1120px,92%);margin:auto}.hero{min-height:78vh;display:grid;place-items:center;text-align:center;padding:70px 0}
+.badge{display:inline-block;padding:8px 13px;border:1px solid #ffffff18;background:#ffffff09;border-radius:999px;color:#b9c7d9;font-size:12px}
+h1{font-size:clamp(43px,8vw,88px);line-height:1;margin:18px 0;background:linear-gradient(90deg,#fff,#b6f3ff,#bca4ff);-webkit-background-clip:text;color:transparent}
+.hero p{max-width:700px;margin:0 auto;color:var(--muted);font-size:17px;line-height:2}
+.btn{display:inline-block;margin:25px 7px 0;padding:13px 21px;border-radius:13px;text-decoration:none;font-weight:900;font-size:14px;border:1px solid #ffffff18;color:white;background:#ffffff0b;cursor:pointer}
+.btn.primary{background:linear-gradient(135deg,var(--a),#2563eb);border:0}
+section{padding:75px 0}.sectionTitle{font-size:30px;margin:0 0 8px}.sectionSub{color:var(--muted);margin:0 0 28px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:linear-gradient(145deg,#121827dd,#0c111bd9);border:1px solid var(--line);border-radius:20px;padding:21px;box-shadow:0 18px 60px #0005}
+.icon{font-size:30px}.card h3{margin:10px 0}.card p{color:var(--muted);line-height:1.8;font-size:13px}
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:35px auto;max-width:720px}.count div{background:#ffffff0a;border:1px solid var(--line);padding:15px;border-radius:15px}.count b{display:block;font-size:28px}.count span{color:var(--muted);font-size:11px}
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:16px}.rule{display:flex;gap:13px;align-items:flex-start}.num{min-width:34px;height:34px;display:grid;place-items:center;border-radius:10px;background:#8b5cf622;color:#c4b5fd;font-weight:900}
+.notice{padding:16px 18px;border-radius:15px;background:#22d3ee0c;border:1px solid #22d3ee22;color:#bfeaf2;font-size:13px;line-height:2}
+.submitBox{text-align:center}.submitBox .bigIcon{font-size:55px;margin-bottom:8px}.submitBox p{max-width:720px;margin:0 auto;color:var(--muted);line-height:2}.submitBtn{margin-top:25px;padding:16px 28px;font-size:16px}
+.games{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.game{overflow:hidden;padding:0}.cover{height:145px;background:linear-gradient(135deg,#2a1d52,#0d6170);display:grid;place-items:center;font-size:52px}.game .inside{padding:17px}.tag{font-size:10px;color:#9eeeff;background:#22d3ee12;padding:5px 8px;border-radius:999px}.stars{color:#facc15}
+footer{border-top:1px solid var(--line);padding:35px 0;color:#77849a;font-size:12px}
+@media(max-width:800px){nav .links{display:none}.grid,.games,.rules{grid-template-columns:1fr}.count{grid-template-columns:repeat(2,1fr)}section{padding:55px 0}}
+</style>
+</head>
+<body>
+<nav>
+<div class="logo">GAME<span>FORGE</span></div>
+<div class="links"><a href="#challenge">چالش</a><a href="#rules">قوانین</a><a href="#works">آثار</a><a href="#submit">ارسال اثر</a></div>
+<a class="btn primary" style="margin:0" href="https://forms.gle/3kZWNisycU5Fciiy8" target="_blank" rel="noopener">شرکت در مسابقه</a>
+</nav>
+
+<header class="hero"><div class="wrap">
+<div class="badge">فصل اول • مسابقه آزاد بازی‌سازی</div>
+<h1>بازی بساز.<br>رقابت کن. برنده شو.</h1>
+<p>یک مسابقه دوستانه برای سازندگان بازی. ایده‌ات را به یک بازی قابل تجربه تبدیل کن، ارسالش کن و با دیگر شرکت‌کننده‌ها رقابت کن.</p>
+<div><a class="btn primary" href="https://forms.gle/3kZWNisycU5Fciiy8" target="_blank" rel="noopener">🚀 ارسال بازی</a><a class="btn" href="#rules">مشاهده قوانین</a></div>
+<div class="count"><div><b id="days">30</b><span>روز باقی‌مانده</span></div><div><b id="hours">00</b><span>ساعت</span></div><div><b id="mins">00</b><span>دقیقه</span></div><div><b id="secs">00</b><span>ثانیه</span></div></div>
+</div></header>
+
+<section id="challenge"><div class="wrap"><h2 class="sectionTitle">چطور شرکت کنم؟</h2><p class="sectionSub">چهار مرحله ساده.</p><div class="grid">
+<div class="card"><div class="icon">💡</div><h3>۱. ایده بساز</h3><p>موضوع فصل را بخوان و یک ایده کوتاه، خلاقانه و قابل اجرا انتخاب کن.</p></div>
+<div class="card"><div class="icon">🎮</div><h3>۲. بازی بساز</h3><p>با هر موتور یا ابزار مجاز بازی‌سازی، نسخه قابل اجرا آماده کن.</p></div>
+<div class="card"><div class="icon">🏆</div><h3>۳. ارسال و رقابت</h3><p>لینک بازی و توضیحات را ارسال کن؛ آثار برای داوری و رأی‌گیری نمایش داده می‌شوند.</p></div>
+</div></div></section>
+
+<section id="rules"><div class="wrap"><h2 class="sectionTitle">قوانین مسابقه</h2><p class="sectionSub">قوانین نمونه هستند و قبل از شروع رسمی قابل تغییرند.</p><div class="rules">
+<div class="card rule"><div class="num">۱</div><div><b>اثر اختصاصی</b><p>اثر باید توسط شرکت‌کننده یا تیم او ساخته شده باشد.</p></div></div>
+<div class="card rule"><div class="num">۲</div><div><b>بازی قابل اجرا</b><p>لینک یا فایل قابل تجربه باید همراه ارسال ارائه شود.</p></div></div>
+<div class="card rule"><div class="num">۳</div><div><b>محتوای مجاز</b><p>محتوای غیرقانونی، نفرت‌پراکن یا ناقض حقوق دیگران پذیرفته نمی‌شود.</p></div></div>
+<div class="card rule"><div class="num">۴</div><div><b>داوری</b><p>امتیاز نهایی می‌تواند ترکیبی از داوران و رأی کاربران باشد.</p></div></div>
+</div></div></section>
+
+<section id="works"><div class="wrap"><h2 class="sectionTitle">آثار شرکت‌کنندگان</h2><p class="sectionSub">نمونه نمایشی — با ثبت آثار واقعی جایگزین می‌شود.</p><div class="games">
+<div class="card game"><div class="cover">🚀</div><div class="inside"><span class="tag">نمونه</span><h3>Neon Runner</h3><p>دونده بی‌پایان در شهر نئونی.</p><span class="stars">★★★★★</span> 9.1</div></div>
+<div class="card game"><div class="cover">🧩</div><div class="inside"><span class="tag">نمونه</span><h3>Mind Grid</h3><p>یک پازل سریع با قوانین ساده.</p><span class="stars">★★★★☆</span> 8.7</div></div>
+<div class="card game"><div class="cover">🧙</div><div class="inside"><span class="tag">نمونه</span><h3>Shadow Quest</h3><p>ماجراجویی کوتاه در دنیای تاریک.</p><span class="stars">★★★★☆</span> 8.5</div></div>
+</div></div></section>
+
+<section id="submit"><div class="wrap"><h2 class="sectionTitle">ارسال بازی</h2><p class="sectionSub">ثبت بازی‌ها از طریق فرم رسمی GAMEFORGE انجام می‌شود.</p>
+<div class="card submitBox"><div class="bigIcon">🚀</div><h2>آماده‌ای بازی خودت را ثبت کنی؟</h2>
+<p>روی دکمه زیر بزن تا وارد فرم رسمی مسابقه شوی. اطلاعات ارسال‌شده مستقیماً در سامانه ثبت پاسخ GAMEFORGE ذخیره می‌شود.</p>
+<a class="btn primary submitBtn" href="https://forms.gle/3kZWNisycU5Fciiy8" target="_blank" rel="noopener">🚀 ورود به فرم ارسال بازی</a>
+</div></div></section>
+
+<footer><div class="wrap">© 2026 GAMEFORGE • مسابقه بازی‌سازی مستقل</div></footer>
+
+<script>
+const deadline=Date.now()+30*864e5;
+function tick(){let d=Math.max(0,deadline-Date.now());document.querySelector('#days').textContent=Math.floor(d/864e5);d%=864e5;document.querySelector('#hours').textContent=String(Math.floor(d/36e5)).padStart(2,'0');d%=36e5;document.querySelector('#mins').textContent=String(Math.floor(d/6e4)).padStart(2,'0');d%=6e4;document.querySelector('#secs').textContent=String(Math.floor(d/1e3)).padStart(2,'0')}
+setInterval(tick,1000);tick();
+</script>
+</body>
+</html>
